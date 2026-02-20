@@ -1,0 +1,93 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "truelist-django"
+version = "0.1.0"
+description = "Django integration for Truelist email validation"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    { name = "Truelist", email = "support@truelist.io" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.1",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Typing :: Typed",
+    "Topic :: Communications :: Email",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["email", "validation", "verification", "truelist", "django", "drf"]
+dependencies = [
+    "truelist>=0.1.0",
+    "django>=4.2",
+]
+
+[project.urls]
+Homepage = "https://truelist.io"
+Documentation = "https://github.com/truelist/truelist-django#readme"
+Repository = "https://github.com/truelist/truelist-django"
+Changelog = "https://github.com/truelist/truelist-django/blob/main/CHANGELOG.md"
+Issues = "https://github.com/truelist/truelist-django/issues"
+
+[project.optional-dependencies]
+drf = ["djangorestframework>=3.14"]
+dev = [
+    "pytest>=7.0",
+    "pytest-django>=4.5",
+    "djangorestframework>=3.14",
+    "mypy>=1.0",
+    "ruff>=0.4",
+    "django-stubs>=4.2",
+    "djangorestframework-stubs>=3.14",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/truelist_django"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+DJANGO_SETTINGS_MODULE = "tests.django_settings"
+
+[tool.mypy]
+strict = true
+plugins = ["mypy_django_plugin.main", "mypy_drf_plugin.main"]
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+[tool.django-stubs]
+django_settings_module = "tests.django_settings"
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+]
