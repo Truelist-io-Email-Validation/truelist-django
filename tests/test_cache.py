@@ -43,8 +43,8 @@ class TestCachedTruelistClient:
         result1 = client.validate("user@example.com")
         result2 = client.validate("user@example.com")
 
-        assert result1.state == "valid"
-        assert result2.state == "valid"
+        assert result1.state == "ok"
+        assert result2.state == "ok"
         mock_client.email.validate.assert_called_once()
 
     @override_settings(TRUELIST_CACHE_ENABLED=True)
@@ -61,7 +61,7 @@ class TestCachedTruelistClient:
         client = CachedTruelistClient(cache_enabled=True)
         result = client.validate("user@example.com")
 
-        assert result.state == "valid"
+        assert result.state == "ok"
         mock_client.email.validate.assert_called_once_with("user@example.com")
 
     @override_settings(TRUELIST_CACHE_ENABLED=True)
@@ -109,8 +109,8 @@ class TestCachedTruelistClient:
         result1 = client.validate("bad@example.com")
         result2 = client.validate("bad@example.com")
 
-        assert result1.state == "invalid"
-        assert result2.state == "invalid"
+        assert result1.state == "email_invalid"
+        assert result2.state == "email_invalid"
         mock_client.email.validate.assert_called_once()
 
     @override_settings(TRUELIST_CACHE_ENABLED=True)
