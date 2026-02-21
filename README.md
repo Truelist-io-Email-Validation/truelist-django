@@ -109,7 +109,7 @@ from truelist_django.cache import CachedTruelistClient
 
 client = CachedTruelistClient()
 result = client.validate("user@example.com")
-print(result.state)  # "valid", "invalid", "risky", or "unknown"
+print(result.state)  # "ok", "email_invalid", "risky", or "unknown"
 ```
 
 ## Validation States
@@ -118,8 +118,8 @@ The Truelist API returns one of four states:
 
 | State | Description | Default Behavior |
 |-------|-------------|-----------------|
-| `valid` | Email is deliverable | Passes validation |
-| `invalid` | Email is not deliverable | Fails validation |
+| `ok` | Email is deliverable | Passes validation |
+| `email_invalid` | Email is not deliverable | Fails validation |
 | `risky` | Email may be deliverable (accept-all domain) | Passes when `allow_risky=True` (default) |
 | `unknown` | Could not determine deliverability | Passes when `fail_silently=True` (default) |
 
