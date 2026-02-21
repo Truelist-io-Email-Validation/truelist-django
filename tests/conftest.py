@@ -8,11 +8,14 @@ from truelist import ValidationResult
 def valid_result() -> ValidationResult:
     return ValidationResult(
         email="user@example.com",
-        state="valid",
-        sub_state="ok",
-        free_email=False,
-        role=False,
-        disposable=False,
+        domain="example.com",
+        canonical="user",
+        mx_record=None,
+        first_name=None,
+        last_name=None,
+        state="ok",
+        sub_state="email_ok",
+        verified_at=None,
         suggestion=None,
     )
 
@@ -21,11 +24,14 @@ def valid_result() -> ValidationResult:
 def invalid_result() -> ValidationResult:
     return ValidationResult(
         email="bad@example.com",
-        state="invalid",
+        domain="example.com",
+        canonical="bad",
+        mx_record=None,
+        first_name=None,
+        last_name=None,
+        state="email_invalid",
         sub_state="failed_no_mailbox",
-        free_email=False,
-        role=False,
-        disposable=False,
+        verified_at=None,
         suggestion=None,
     )
 
@@ -34,11 +40,14 @@ def invalid_result() -> ValidationResult:
 def risky_result() -> ValidationResult:
     return ValidationResult(
         email="risky@example.com",
+        domain="example.com",
+        canonical="risky",
+        mx_record=None,
+        first_name=None,
+        last_name=None,
         state="risky",
         sub_state="accept_all",
-        free_email=False,
-        role=False,
-        disposable=False,
+        verified_at=None,
         suggestion=None,
     )
 
@@ -47,10 +56,13 @@ def risky_result() -> ValidationResult:
 def unknown_result() -> ValidationResult:
     return ValidationResult(
         email="mystery@example.com",
+        domain="example.com",
+        canonical="mystery",
+        mx_record=None,
+        first_name=None,
+        last_name=None,
         state="unknown",
         sub_state="unknown",
-        free_email=False,
-        role=False,
-        disposable=False,
+        verified_at=None,
         suggestion=None,
     )
