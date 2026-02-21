@@ -2,7 +2,7 @@
 
 Django integration for the [Truelist](https://truelist.io) email validation API. Provides a Django model field validator, a DRF serializer field, and caching via Django's cache framework.
 
-Built on top of the [truelist](https://github.com/truelist/truelist-python) Python SDK.
+Built on top of the [truelist](https://github.com/Truelist-io-Email-Validation/truelist-python) Python SDK.
 
 ## Installation
 

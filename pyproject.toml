@@ -38,10 +38,10 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://truelist.io"
-Documentation = "https://github.com/truelist/truelist-django#readme"
-Repository = "https://github.com/truelist/truelist-django"
-Changelog = "https://github.com/truelist/truelist-django/blob/main/CHANGELOG.md"
-Issues = "https://github.com/truelist/truelist-django/issues"
+Documentation = "https://github.com/Truelist-io-Email-Validation/truelist-django#readme"
+Repository = "https://github.com/Truelist-io-Email-Validation/truelist-django"
+Changelog = "https://github.com/Truelist-io-Email-Validation/truelist-django/blob/main/CHANGELOG.md"
+Issues = "https://github.com/Truelist-io-Email-Validation/truelist-django/issues"
 
 [project.optional-dependencies]
 drf = ["djangorestframework>=3.14"]
