@@ -1,8 +1,12 @@
 # truelist-django
 
+[![Free tier](https://img.shields.io/badge/free_plan-100_validations-4A7C59?style=flat-square)](https://truelist.io/pricing)
 Django integration for the [Truelist](https://truelist.io) email validation API. Provides a Django model field validator, a DRF serializer field, and caching via Django's cache framework.
 
 Built on top of the [truelist](https://github.com/Truelist-io-Email-Validation/truelist-python) Python SDK.
+
+> **Start free** — 100 validations + 10 enhanced credits, no credit card required.
+> [Get your API key →](https://app.truelist.io/signup?utm_source=github&utm_medium=readme&utm_campaign=free-plan&utm_content=truelist-django)
 
 ## Installation
 
@@ -146,6 +150,10 @@ python -m pytest tests/ -v
 - Django 4.2, 5.0, 5.1
 - DRF 3.14+ (optional)
 
+
+## Getting Started
+
+Sign up for a [free Truelist account](https://app.truelist.io/signup?utm_source=github&utm_medium=readme&utm_campaign=free-plan&utm_content=truelist-django) to get your API key. The free plan includes 100 validations and 10 enhanced credits — no credit card required.
 ## License
 
 MIT
